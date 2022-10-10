@@ -1,6 +1,7 @@
 # Task №1
 import time
 
+
 class Auto:
     brand = 'Ferrari'
     age = 4
@@ -15,8 +16,9 @@ class Auto:
         print('stop')
 
     def birthday(self):
-        age = Auto.age + 1
+        age = self.age + 1
         print(f'age is {age}')
+
 
 # Task №2
 class Truck(Auto):
@@ -35,7 +37,7 @@ class Car(Auto):
     max_speed = 325
 
     def move(self):
-        print(f'max speed is {Car.max_speed}')
+        print(f'max speed is {self.max_speed}')
 
 
 auto1 = Auto()
