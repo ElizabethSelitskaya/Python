@@ -1,0 +1,51 @@
+# CREATE SCHEMA IF NOT EXISTS `db`
+
+# CREATE TABLE IF NOT EXISTS `employees`(
+#     `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+#     `name` VARCHAR(15) NOT NULL,
+#     `date` DATE,
+#     `hours` INT
+# );
+
+# CREATE TABLE IF NOT EXISTS `salary`(
+#     `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+#     `sum` INT,
+#     `id_name` INT
+# );
+
+# ALTER TABLE `employees` DROP COLUMN `date`;
+
+# ALTER TABLE `employees` ADD COLUMN `post` VARCHAR(20) NOT NULL AFTER `name`;
+
+# INSERT INTO `employees`
+# (`name`, `post`, `hours`) VALUES
+# ('Misha', 'barista', 238),
+# ('Liza', 'cook', 175),
+# ('Zhenya', 'helper', 84),
+# ('Ali', 'cleaner', 56);
+
+# INSERT INTO `salary`
+# (`sum`, `id_name`) VALUES
+# (1190, 1),
+# (875, 2),
+# (420, 3),
+# (280, 4);
+
+# SELECT * FROM `employees`;
+
+# SELECT * FROM `salary`;
+
+# ALTER TABLE `salary`
+# ADD CONSTRAINT `5_an_hour` FOREIGN KEY (`id_name`)
+# REFERENCES `employees`(`id`)
+# ON UPDATE CASCADE
+# ON DELETE RESTRICT;
+
+# SELECT MAX(`sum`) FROM salary;
+
+# SELECT MIN(`sum`) FROM salary;
+
+# SELECT `employees`.`name`, `employees`.`post`, `salary`.`sum`
+# FROM `employees`
+# LEFT JOIN `salary`
+# ON `salary`.`id_name` = `employees`.`id`
